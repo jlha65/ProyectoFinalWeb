@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Practica de Web</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+    </head>
+    <body>
+        <h1>Hola Luisa</h1>
+        <h2>Luisa Fernanda Pineda Ochoa A00513827</h2>
+        <h3>Lunes 22 de Octubre, 5:30pm</h3>
+        <h3 class="title">You have no account? Register!</h3>
+        <p>Enter your information in the fields</p>
+        <form method="post" action="../controller/register.php"  name="signup">
+            <input type="hidden" name="action" value="add">
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+            <label>Name:</label>
+            <input type="text" name="name" required><br><br>
+            <label>Username:</label>
+            <input type="text" name="username" required><br><br>
+            <label>Password:</label>
+            <input type="password" name="password" required><br><br>
+            <label>City:</label>
+            <input type="text" name="city" required><br><br>
+            <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
+            <label>&nbsp;</label>
+            <input name="signUpSubmit" type="submit" class="button" value="Join Now" id="submit">
+        </form>
+        <br>
+        <form action="index.html">
+            <input type="submit" class="button_register"value="Go Back">
+        </form>
+    </body>
+</html>

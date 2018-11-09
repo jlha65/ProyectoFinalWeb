@@ -1,0 +1,26 @@
+body {
+    font-family: arial;
+    border: 10px;
+}
+p{
+    font-weight: bold;
+}
+.title {
+    color: darkblue;
+}
+.button {
+    background-color: #5fcf80 ;
+    border-color: #3ac162;
+    font-weight: bold;
+    padding: 12px 15px;
+    max-width: 100px;
+    color: #ffffff;
+}
+.button_register {
+    background-color: #00ace6 ;
+    border-color: #00ace6;
+    font-weight: bold;
+    padding: 12px 15px;
+    max-width: 100px;
+    color: #ffffff;
+}
