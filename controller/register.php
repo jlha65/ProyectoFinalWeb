@@ -2,8 +2,9 @@
 include('../dataAccess/dbconnection.php');
 
 include('../dataAccess/UserDAO.php');
+include('../model/User.php');
 
-$user = new User($DB_CON);
+$userDAO = new UserDAO($DB_CON);
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -13,7 +14,9 @@ $city = $_POST['city'];
 $country = $_POST['country'];
 $telephone = $_POST['telephone'];
 
-$success = $user->insertUser($name, $email, $username, $password, $city, $country, $telephone);
+$user = new User($name, $email, $username, $password, $city, $country, $telephone);
+
+$success = $userDAO->insertUser($user);
 if($success) {
     /*echo('Registration completed. Here is your data');
     echo('name: '.$name);
@@ -26,16 +29,16 @@ if($success) {
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');
-    window.location.href='../html/index.html';
+    window.location.href='../html/home.html';
     </script>";
 }else{
-  echo('name: '.$name);
-  echo('username: '.$username);
-  echo('password: '.$password);
-  echo('email: '.$email);
-  echo('city: '.$city);
-  echo('country: '.$country);
-  echo('telephone: '.$telephone);
+    /*echo('name: '.$name);
+    echo('username: '.$username);
+    echo('password: '.$password);
+    echo('email: '.$email);
+    echo('city: '.$city);
+    echo('country: '.$country);
+    echo('telephone: '.$telephone);*/
     echo('Problem inserting the user');
 }
 

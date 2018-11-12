@@ -1,5 +1,5 @@
 <?php
-    class User
+    class UserDAO
     {
 
         private $db;
@@ -8,18 +8,18 @@
             $this->db = $DB_CON;
         }
 
-        public function insertUser($name, $email, $username, $password, $city, $country, $telephone)
+        public function insertUser($user)
         {
           //$db = getDB();
             try{
                 $statement = $this->db->prepare('INSERT INTO User(name,email,username,password, city,country,telephone) VALUES(:name,:email,:username,:password,:city,:country,:telephone)');
-                $statement->bindParam(':name', $name);
-                $statement->bindParam(':email', $email);
-                $statement->bindParam(':username', $username);
-                $statement->bindParam(':password', $password);
-                $statement->bindParam(':city', $city);
-                $statement->bindParam(':country', $country);
-                $statement->bindParam(':telephone', $telephone);
+                $statement->bindParam(':name', $user->getName());
+                $statement->bindParam(':email', $user->getEmail());
+                $statement->bindParam(':username', $user->getUsername());
+                $statement->bindParam(':password', $user->getPassword());
+                $statement->bindParam(':city', $user->getCity());
+                $statement->bindParam(':country', $user->getCountry());
+                $statement->bindParam(':telephone', $user->getTelephone());
                 $statement->execute();
                 return True;
             } catch(PDOException $ex) {
