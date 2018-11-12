@@ -2,7 +2,9 @@
 include('../dataAccess/dbconnection.php');
 
 include('../dataAccess/UserDAO.php');
+include('../model/User.php');
 
+session_start();
 $userDAO = new UserDAO($DB_CON);
 
 $username = $_POST['username'];
@@ -20,7 +22,12 @@ if(!isset($UserToSearch)) {
     window.location.href='../html/login.html';
     </script>";
 }else{
-    echo('Hi '.$UserToSearch['username']);
-
+    //echo('Hi '.$UserToSearch['username']);
+    $user = new User($UserToSearch['name'], $UserToSearch['email'], $UserToSearch['username'], 
+    $UserToSearch['password'], $UserToSearch['city'], $UserToSearch['country'], $UserToSearch['telephone']);
+    $_SESSION['user']=$user;
+    echo "<script>
+    window.location.href='../html/home.php';
+    </script>";
 }
 ?>

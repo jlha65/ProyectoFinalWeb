@@ -6,6 +6,8 @@
 
 body {
   padding-top: 54px;
+  font-family: arial;
+  border: 10px;
 }
 
 @media (min-width: 992px) {
@@ -20,4 +22,25 @@ body {
 
 .pagination {
   margin-bottom: 30px;
+}
+
+.selected_nav_element {
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: blue;
+}
+
+li:hover {
+  color: white;
+  cursor: pointer;
+  background-color:pink;
+}
+.element_hidden {
+  display: none;
+}
+
+.containerAdopcion{
+  text-align: center;
+  padding: 100px;
 }

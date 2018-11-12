@@ -29,7 +29,7 @@ if($success) {
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');
-    window.location.href='../html/home.html';
+    window.location.href='../html/home.php';
     </script>";
 }else{
     /*echo('name: '.$name);
