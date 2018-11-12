@@ -8,16 +8,18 @@
             $this->db = $DB_CON;
         }
 
-        public function insertUser($name, $email, $username, $password, $city)
+        public function insertUser($name, $email, $username, $password, $city, $country, $telephone)
         {
           //$db = getDB();
             try{
-                $statement = $this->db->prepare('INSERT INTO users(name,email,username,password, city) VALUES(:name,:email,:username,:password,:city)');
+                $statement = $this->db->prepare('INSERT INTO User(name,email,username,password, city,country,telephone) VALUES(:name,:email,:username,:password,:city,:country,:telephone)');
                 $statement->bindParam(':name', $name);
                 $statement->bindParam(':email', $email);
                 $statement->bindParam(':username', $username);
                 $statement->bindParam(':password', $password);
                 $statement->bindParam(':city', $city);
+                $statement->bindParam(':country', $country);
+                $statement->bindParam(':telephone', $telephone);
                 $statement->execute();
                 return True;
             } catch(PDOException $ex) {
@@ -30,7 +32,7 @@
           //$db = getDB();
             try
             {
-                $statement = $this->db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
+                $statement = $this->db->prepare('SELECT * FROM User WHERE username = :username AND password = :password');
                 $statement->bindParam(':username', $username);
                 $statement->bindParam(':password', $password);
                 $statement->execute();

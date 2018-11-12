@@ -2,25 +2,34 @@ body {
     font-family: arial;
     border: 10px;
 }
-p{
+.bold{
     font-weight: bold;
 }
 .title {
-    color: darkblue;
+    color:#345995;
+}
+
+.container{
+    text-align: center;
+    padding: 100px;
 }
 .button {
-    background-color: #5fcf80 ;
-    border-color: #3ac162;
+    background-color: #EAC435 ;
+    border-color: #EAC435;
     font-weight: bold;
     padding: 12px 15px;
     max-width: 100px;
     color: #ffffff;
 }
 .button_register {
-    background-color: #00ace6 ;
-    border-color: #00ace6;
+    background-color: #00C1D5 ;
+    border-color: #00C1D5;
     font-weight: bold;
     padding: 12px 15px;
     max-width: 100px;
     color: #ffffff;
+}
+#huella{
+    width: 50px;
+    height: 50px;
 }

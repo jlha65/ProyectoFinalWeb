@@ -17,7 +17,7 @@ if(!isset($UserToSearch)) {
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');
-    window.location.href='../html/index.html';
+    window.location.href='../html/login.html';
     </script>";
 }else{
     echo('Hi '.$UserToSearch['username']);

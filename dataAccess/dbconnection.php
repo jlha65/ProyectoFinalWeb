@@ -1,6 +1,6 @@
 <?php
 $DB_PASS = 'root';
-$DB_NAME = 'user';
+$DB_NAME = 'AdoptMe';
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
 try{
