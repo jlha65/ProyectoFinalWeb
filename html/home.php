@@ -72,79 +72,14 @@
         <div class="container">
 
           <!-- Page Heading -->
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
+          <h1 class="my-4">Catálogo de Mascotas</h1>
+
+          
 
           <div class="row">
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project One</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project Two</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project Three</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project Four</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project Five</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Project Six</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-                </div>
-              </div>
-            </div>
+          <?php include("../controller/mostrarCatalogo.php");?>
           </div>
-          
+
           <!-- /.row -->
     <!-- Pagination
           
@@ -181,11 +116,11 @@
       <div class="containerAdopcion">
         <h1 class="title">Registra una mascota en Adopción!</h1>
                 <p class="bold">Ingresa la información de la mascota</p>
-                <form method="post" action="../controller/uploadPet.php"  name="uploadPet">
+                <form method="post" action="../controller/uploadPet.php"  name="uploadPet" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="add">
                     <label>Nombre</label>
                     <br>
-                    <input type="email" name="emnameail" required><br><br>
+                    <input type="text" name="nameP" required><br><br>
                     <label>Tipo</label>
                     <br>
                     <input type="text" name="type" required><br><br>
@@ -198,6 +133,12 @@
                     <label>Descripcion</label>
                     <br>
                     <input type="text" name="description" required><br><br>
+                    <label>Raza</label>
+                    <br>
+                    <input type="text" name="breed" required><br><br>
+                    <label>Imagen</label>
+                    <br>
+                    <input type="file" name="dogImage" style="text-align:center;" required><br><br>
                     <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
                     <label>&nbsp;</label>
                     <input name="signUpSubmit" type="submit" class="button" value="Registrar" id="submit">
@@ -218,24 +159,24 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p>
+          <div class="carousel-item active" style="background-image: url('https://image.ibb.co/bXfa7q/animal-dog-feelings-40064.jpg')">
+            <div class="carouselback carousel-caption d-none d-md-block">
+              <h3>Amor</h3>
+              <p>Abrir las puertas de tu casa con el fin de convertirlo en un miembro de la familia</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
+          <div class="carousel-item" style="background-image: url('https://image.ibb.co/kQQa7q/animal-cat-domestic-animal-1323256.jpg')">
+            <div class="carouselback carousel-caption d-none d-md-block">
+              <h3>Lealtad</h3>
+              <p>Tu nuevo cómplice de aventuras</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
+          <div class="carousel-item" style="background-image: url('https://image.ibb.co/hByv7q/adorable-animal-attractive-1462634.jpg')">
+            <div class="carouselback carousel-caption d-none d-md-block">
+              <h3>Cariño</h3>
+              <p>No cambias al mundo adoptando una mascota, pero cambiaste el mundo de esa mascota </p>
             </div>
           </div>
         </div>
@@ -251,125 +192,144 @@
     </header>
     <header class="bg-primary text-white headerAbout">
       <div class="container text-center">
-        <h1>Welcome to Scrolling Nav</h1>
-        <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+        <h1>Esto es Adoptando Huellitas!</h1>
+        <p class="lead">Un espacio donde puedes adoptar y poner en adopción mascotas</p>
       </div>
     </header>
-
     <div id="about" class="sectionAbout">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About this page</h2>
-            <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+            <h2>¡Creemos que puedes hacer la diferencia!</h2>
+            <p class="lead">Somos una página web que cuenta con el objetivo de proveer a nuestros usuarios de maneras alternas para poseer una mascota y dar en adopción otras. Las mascotas que más encontrarás en nuestro sitio son:</p>
             <ul>
-              <li>Clickable nav links that smooth scroll to page sections</li>
-              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+              <li>Perros</li>
+              <li>Gatos</li>
+              <li>Conejos</li>
+              <li>Cerdos</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
     <div id="services" class="bg-light sectionAbout">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Services we offer</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          <img class="imagenSitio" src="https://image.ibb.co/ksA4iV/affection-animal-brunette-1139793.jpg"/>
+            <h2>Testimonio de nuestros clientes</h2>
+            <br>
+            <p class="lead">"Adoptando Huellitas me dio la oportunidad de conocer a Max, mi perro. Hacemos todo juntos y es increíble como cambio mi vida de la mejor manera posible" </p>
+            <p class="lead"> - Maria Rodríguez, Ciudad de México </p>
           </div>
         </div>
       </div>
     </div>
-
     <div id="contact" class="sectionAbout">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact us</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+            <h2>Contáctanos</h2>
+            <p class="lead">Si cuentas con alguna sugerencia, duda o comentario puedes enviarnos un correo electrónico a adoptahuellitas@gmail.com </p>
           </div>
         </div>
       </div>
     </div>
-
     </section>
 
     <!-- Section del perfil del usuario -->
     <section id="perfil_section" class="element_hidden">
-      <h1>Hola, <?php echo $userName?> </h1>
 
     <!-- Page Content -->
     <div class="container">
 
-<!-- Heading Row -->
-<div class="row my-4">
-  <div class="col-lg-8">
-    <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
-  </div>
-  <!-- /.col-lg-8 -->
-  <div class="col-lg-4">
-    <h1>Business Name or Tagline</h1>
-    <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-    <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
-  </div>
-  <!-- /.col-md-4 -->
-</div>
-<!-- /.row -->
-
-<!-- Call to Action Well -->
-<div class="card text-white bg-secondary my-4 text-center">
-  <div class="card-body">
-    <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
-  </div>
-</div>
-
-<!-- Content Row -->
-<div class="row">
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Card One</h2>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+    <!-- Heading Row -->
+    <div class="row my-4">
+      <div class="col-lg-8">
+        <img class="img-fluid rounded" src="https://image.ibb.co/euA8Sq/adorable-animals-breed-374825.jpg" alt="">
       </div>
-      <div class="card-footer">
-        <a href="#" class="btn btn-primary">More Info</a>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4">
+        <h1><?php echo $userName?></h1>
+        <h4 id="usernameStyle">@<?php echo $userUsername?></h4>
+        <br>
+        <img class="imagenIcono" src="https://image.ibb.co/cvn90A/67347.png">
+        <p> <?php echo $userCity?>, <?php echo $userCountry?></p>
+        <img class="imagenIcono" src="https://image.ibb.co/nu57nq/telephone.png">
+        <p> <?php echo $userTelephone?></p>
+        <img class="imagenIcono" src="https://image.ibb.co/mna7nq/email.png">
+        <p> <?php echo $userEmail?></p>
+
+        <p>¡Esperamos que estes teniendo una estancia agradable en nuestro sitio!</p>
+        <a class="btn btn-primary btn-lg" href="#">Editar mi información</a>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-4 text-center">
+      <div class="card-body">
+        <p class="text-white m-0">Mascotas que yo he puesto en adopción</p>
       </div>
     </div>
-  </div>
-  <!-- /.col-md-4 -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Card Two</h2>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="btn btn-primary">More Info</a>
-      </div>
-    </div>
-  </div>
-  <!-- /.col-md-4 -->
-  <div class="col-md-4 mb-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Card Three</h2>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="btn btn-primary">More Info</a>
-      </div>
-    </div>
-  </div>
-  <!-- /.col-md-4 -->
 
-</div>
-<!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card One</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card Two</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card Three</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card Three</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
 
-</div>
-<!-- /.container -->
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
 
     </section>
 

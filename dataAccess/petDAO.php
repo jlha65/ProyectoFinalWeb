@@ -8,22 +8,35 @@
             $this->db = $DB_CON;
         }
 
-        public function insertPet($pet)
+        public function insertPet($pet, $imageFile)
         {
           //$db = getDB();
             try{
-                /*
-                $statement = $this->db->prepare('INSERT INTO User(name,email,username,password, city,country,telephone) VALUES(:name,:email,:username,:password,:city,:country,:telephone)');
-                $statement->bindParam(':name', $user->getName());
-                $statement->bindParam(':email', $user->getEmail());
-                $statement->bindParam(':username', $user->getUsername());
-                $statement->bindParam(':password', $user->getPassword());
-                $statement->bindParam(':city', $user->getCity());
-                $statement->bindParam(':country', $user->getCountry());
-                $statement->bindParam(':telephone', $user->getTelephone());
-                $statement->execute();*/
-                return True;
+                
+                $statement = $this->db->prepare('INSERT INTO Pet(name,type,color,description, yearofbirth, breed, image) VALUES(:name,:type,:color,:description,:yearofbirth,:breed,:image)');
+                $statement->bindParam(':name', $pet->getName());
+                $statement->bindParam(':type', $pet->getType());
+                $statement->bindParam(':color', $pet->getColor());
+                $statement->bindParam(':description', $pet->getDescription());
+                $statement->bindParam(':yearofbirth', $pet->getYearofbirth());
+                $statement->bindParam(':breed', $pet->getBreed());
+                $statement->bindParam(':image', $pet->getImage());
+
+                
+                //$statement->bindParam(':image', $image);
+                $img=$pet->getImage();
+                if (move_uploaded_file($imageFile,"../pictures/$img")){
+                    $statement->execute();
+                    return True;
+                } else {
+                    return False;
+                }
+                
             } catch(PDOException $ex) {
+                echo $pet->getImage();
+                echo '----';
+                echo $ex;
+                
                 return False;
             }
         }
@@ -37,7 +50,7 @@
                 $statement->execute();
                  //en caso de que haya mas
                 if($statement->rowCount() > 0 ){
-                    $result = $statement->fetch(PDO::FETCH_ASSOC);
+                    $result = $statement->fetchAll();
                     return $result;
                 }else{ //en caso de que no haya ninguno
                     return null;

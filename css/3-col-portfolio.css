@@ -44,3 +44,20 @@ li:hover {
   text-align: center;
   padding: 100px;
 }
+
+.imagenSitio{
+  width: 350px;
+  height: 350px;
+  float: left;
+  margin-right: 30px;
+}
+
+.imagenIcono{
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 15px;
+}
+#usernameStyle{
+  font-style: italic;
+}
