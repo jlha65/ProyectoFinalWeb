@@ -47,5 +47,25 @@
                 echo $ex->getMessage();
             }
         }
+
+        public function getUserData($username)
+        {
+          //$db = getDB();
+            try
+            {
+                $statement = $this->db->prepare('SELECT * FROM User WHERE username = :username');
+                $statement->bindParam(':username', $username);
+                $statement->execute();
+                 //en caso de que haya mas
+                if($statement->rowCount() > 0 ){
+                    $result = $statement->fetch(PDO::FETCH_ASSOC);
+                    return $result;
+                }else{ //en caso de que no haya ninguno
+                    return null;
+                }
+            }catch(PDOException $ex) {
+                echo $ex->getMessage();
+            }
+        }
     }
 ?>

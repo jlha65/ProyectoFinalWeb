@@ -15,7 +15,7 @@ if(!isset($UserToSearch)) {
     /*echo('Wrong username/password');
     echo('username wrote: '.$username);
     echo('password wrote: '.$password);*/
-    $message = 'Wrong username or password, '.$username;
+    $message = 'Usuario o contraseña incorrecto, '.$username;
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');

@@ -36,14 +36,16 @@
     <!-- Custom styles for this template -->
     <link href="../css/scrolling-nav.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navBarStyle navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Adopta Huellitas</a>
+        <a class="navbar-brand logoTitle" href="#">Adopta Huellitas🐾</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -73,40 +75,22 @@
 
           <!-- Page Heading -->
           <h1 class="my-4">Catálogo de Mascotas</h1>
-
-          
-
+<!--
+          <a class="trigger_popup_fricc">Click here to show the popup</a>
+          <div class="hover_bkgr_fricc element_hidden">
+              <span class="helper"></span>
+              <div>
+                  <div class="popupCloseButton">X</div>
+                  <p>Add any HTML content<br />inside the popup box!</p>
+              </div>
+          </div>
+  -->
           <div class="row">
           <?php include("../controller/mostrarCatalogo.php");?>
-          </div>
+          
+          </div> 
 
           <!-- /.row -->
-    <!-- Pagination
-          
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
-      -->
         </div>
         <!-- /.container -->
     </section>
@@ -114,7 +98,7 @@
     <!-- Section para dar en alta alguna adopcion -->
     <section id="adopcion_section" class="element_hidden">
       <div class="containerAdopcion">
-        <h1 class="title">Registra una mascota en Adopción!</h1>
+        <h1 class="title aboutHeadings">Registra una mascota en Adopción!</h1>
                 <p class="bold">Ingresa la información de la mascota</p>
                 <form method="post" action="../controller/uploadPet.php"  name="uploadPet" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="add">
@@ -138,10 +122,10 @@
                     <input type="text" name="breed" required><br><br>
                     <label>Imagen</label>
                     <br>
-                    <input type="file" name="dogImage" style="text-align:center;" required><br><br>
+                    <input type="file" name="dogImage" style="text-align:center !important; padding-left: 80px;" required><br><br>
                     <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
                     <label>&nbsp;</label>
-                    <input name="signUpSubmit" type="submit" class="button" value="Registrar" id="submit">
+                    <input name="signUpSubmit" type="submit" class="button btn btn-primary btn-lg" value="Registrar" id="submit">
                 </form>
                 <br>
         </div>
@@ -161,21 +145,21 @@
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active" style="background-image: url('https://image.ibb.co/bXfa7q/animal-dog-feelings-40064.jpg')">
             <div class="carouselback carousel-caption d-none d-md-block">
-              <h3>Amor</h3>
+              <h3 class="aboutHeadings">Amor</h3>
               <p>Abrir las puertas de tu casa con el fin de convertirlo en un miembro de la familia</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('https://image.ibb.co/kQQa7q/animal-cat-domestic-animal-1323256.jpg')">
             <div class="carouselback carousel-caption d-none d-md-block">
-              <h3>Lealtad</h3>
+              <h3 class="aboutHeadings">Lealtad</h3>
               <p>Tu nuevo cómplice de aventuras</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('https://image.ibb.co/hByv7q/adorable-animal-attractive-1462634.jpg')">
             <div class="carouselback carousel-caption d-none d-md-block">
-              <h3>Cariño</h3>
+              <h3 class="aboutHeadings">Cariño</h3>
               <p>No cambias al mundo adoptando una mascota, pero cambiaste el mundo de esa mascota </p>
             </div>
           </div>
@@ -190,9 +174,9 @@
         </a>
       </div>
     </header>
-    <header class="bg-primary text-white headerAbout">
+    <header class="bg-primary text-white headerAbout estoEsAdoptandoHuellitas">
       <div class="container text-center">
-        <h1>Esto es Adoptando Huellitas!</h1>
+        <h1 class="aboutHeadings">Esto es Adoptando Huellitas!</h1>
         <p class="lead">Un espacio donde puedes adoptar y poner en adopción mascotas</p>
       </div>
     </header>
@@ -200,7 +184,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>¡Creemos que puedes hacer la diferencia!</h2>
+            <h2 class="aboutHeadings">¡Creemos que puedes hacer la diferencia!</h2>
             <p class="lead">Somos una página web que cuenta con el objetivo de proveer a nuestros usuarios de maneras alternas para poseer una mascota y dar en adopción otras. Las mascotas que más encontrarás en nuestro sitio son:</p>
             <ul>
               <li>Perros</li>
@@ -217,7 +201,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
           <img class="imagenSitio" src="https://image.ibb.co/ksA4iV/affection-animal-brunette-1139793.jpg"/>
-            <h2>Testimonio de nuestros clientes</h2>
+            <h2 class="aboutHeadings">Testimonio de nuestros clientes</h2>
             <br>
             <p class="lead">"Adoptando Huellitas me dio la oportunidad de conocer a Max, mi perro. Hacemos todo juntos y es increíble como cambio mi vida de la mejor manera posible" </p>
             <p class="lead"> - Maria Rodríguez, Ciudad de México </p>
@@ -229,7 +213,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contáctanos</h2>
+            <h2 class="aboutHeadings">Contáctanos</h2>
             <p class="lead">Si cuentas con alguna sugerencia, duda o comentario puedes enviarnos un correo electrónico a adoptahuellitas@gmail.com </p>
           </div>
         </div>
@@ -276,56 +260,8 @@
 
     <!-- Content Row -->
     <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card One</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card Two</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card Three</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Card Three</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">More Info</a>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-
-    </div>
+      <?php include("../controller/showUsersPets.php");?>
+    </div> 
     <!-- /.row -->
 
     </div>

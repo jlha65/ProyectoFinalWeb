@@ -12,19 +12,20 @@ body {
 
 .container{
     text-align: center;
+    padding-top: 50px !important;
     padding: 100px;
 }
 .button {
-    background-color: #EAC435 ;
-    border-color: #EAC435;
+    background-color: #1A407C ;
+    border-color: #1A407C;
     font-weight: bold;
     padding: 12px 15px;
     max-width: 100px;
     color: #ffffff;
 }
 .button_register {
-    background-color: #00C1D5 ;
-    border-color: #00C1D5;
+    background-color: #007BFE ;
+    border-color: #007BFE;
     font-weight: bold;
     padding: 12px 15px;
     max-width: 100px;

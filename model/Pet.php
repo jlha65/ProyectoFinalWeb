@@ -9,9 +9,10 @@
         private $description;
         private $breed;
         private $image;
+        private $username;
 
         
-        function __construct($name, $type, $yearofbirth, $color, $description, $breed, $image)
+        function __construct($name, $type, $yearofbirth, $color, $description, $breed, $image, $username)
         {
             $this->name = $name;
             $this->type = $type;
@@ -20,6 +21,7 @@
             $this->description = $description;
             $this->breed = $breed;
             $this->image = $image;
+            $this->username = $username;
         }
 
         public function setName($name){
@@ -76,6 +78,14 @@
     
         public function getImage(){
             return $this->image;
+        }
+
+        public function setUsername($username){
+            $this->username = $username;
+        }
+    
+        public function getUsername(){
+            return $this->username;
         }
     }
 ?>

@@ -25,7 +25,7 @@ if($success) {
     echo('name: '.$email);
     echo('city: '.$city);
 */
-    $message = 'Registration completed, '.$name;
+    $message = 'Ya estás registrado, '.$name;
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');
