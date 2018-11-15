@@ -169,7 +169,6 @@
                     <label>Imagen</label>
                     <br>
                     <input type="file" name="dogImage" style="text-align:center !important; padding-left: 80px;" required><br><br>
-                    <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
                     <label>&nbsp;</label>
                     <input name="signUpSubmit" type="submit" class="button btn btn-primary btn-lg" value="Registrar" id="submit">
                 </form>
