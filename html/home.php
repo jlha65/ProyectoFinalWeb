@@ -32,7 +32,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="https://image.ibb.co/nsfN2q/58aeffb2c869e092af51ee74.png">
     <!-- Custom styles for this template -->
     <link href="../css/3-col-portfolio.css" rel="stylesheet">
 
@@ -88,11 +88,42 @@
               </div>
           </div>
   -->
+  <!--
+          <div class="filterDiv">
+          <form method="post" action="../controller/filterCatalogo.php"  name="filter">
+               <select class="selectFilter" name="typeFilter" required>
+                      <option selected value="Todos">Todos los tipos</option>
+                      <option value="Gato">Gato</option>
+                      <option value="Conejo">Conejo</option>
+                      <option value="Perro">Perro</option>
+                      <option value="Iguana">Iguana</option>
+                      <option value="Cerdo">Cerdo</option>
+                      <option value="Pez">Pez</option>
+                      <option value="Cuyo">Cuyo</option>
+                      <option value="Borrego">Borrego</option>
+                      <option value="Otro">Otro</option>
+                </select>
+                <input name="filter" type="submit" class="filterButtonStyle" value="    " id="submit">
+          </div>
+         </form>
+  -->
+        <select id="mySelect" onchange="myFunction()" class="selectFilter " name="typeFilter" required>
+                      <option selected value="Todos">Todos los tipos</option>
+                      <option value="Gato">Gato</option>
+                      <option value="Conejo">Conejo</option>
+                      <option value="Perro">Perro</option>
+                      <option value="Iguana">Iguana</option>
+                      <option value="Cerdo">Cerdo</option>
+                      <option value="Pez">Pez</option>
+                      <option value="Cuyo">Cuyo</option>
+                      <option value="Borrego">Borrego</option>
+                      <option value="Otro">Otro</option>
+                </select>
+          <br>
+          <p id="demo"></p>
           <div class="row">
           <?php include("../controller/mostrarCatalogo.php");?>
-          
           </div> 
-
           <!-- /.row -->
         </div>
         <!-- /.container -->
@@ -108,18 +139,30 @@
                     <label>Nombre</label>
                     <br>
                     <input type="text" name="nameP" required><br><br>
-                    <label>Tipo</label>
-                    <br>
-                    <input type="text" name="type" required><br><br>
+                    <!--<label>Tipo</label>
+                    <br>-->
+                    <select name="type"required>
+                      <option selected disabled hidden value="">Seleccionar Tipo..</option>
+                      <option value="Gato">Gato</option>
+                      <option value="Conejo">Conejo</option>
+                      <option value="Perro">Perro</option>
+                      <option value="Iguana">Iguana</option>
+                      <option value="Cerdo">Cerdo</option>
+                      <option value="Pez">Pez</option>
+                      <option value="Cuyo">Cuyo</option>
+                      <option value="Borrego">Borrego</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <!--<input type="text" name="type" required>--><br><br>
                     <label>Año de nacimiento</label>
                     <br> 
-                    <input type="text" name="yearofbirth" required><br><br>
+                    <input type="number" min="2000" max="<?php echo date("Y"); ?>" name="yearofbirth" required><br><br>
                     <label>Color</label>
                     <br>
                     <input type="text" name="color" required><br><br>
                     <label>Descripcion</label>
                     <br>
-                    <input type="text" name="description" required><br><br>
+                    <input type="text" name="description" class="myDescriptionInput"required><br><br>
                     <label>Raza</label>
                     <br>
                     <input type="text" name="breed" required><br><br>
@@ -291,3 +334,27 @@
   </body>
 
 </html>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    //document.getElementById("demo").innerHTML = "You selected: " + x;
+    if (x=='Todos'){
+      var elements = document.getElementsByClassName('elementoDelCatalogo');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('element_hidden');
+      }
+
+    } else {
+      
+      var elements = document.getElementsByClassName('elementoDelCatalogo');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add('element_hidden');
+      }
+      var elements = document.getElementsByClassName('type'+x);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('element_hidden');
+      }
+    }
+}
+</script>

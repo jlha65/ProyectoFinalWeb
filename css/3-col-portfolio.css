@@ -169,3 +169,28 @@ li:hover {
   font-weight: bold;
 }
 /* Popup box BEGIN */
+.myDescriptionInput{
+  width: 300px;
+}
+
+.filterButtonStyle{
+  background-image: url('https://image.ibb.co/dPQdX0/Search-512.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  /*background-color: #;*/
+  border: 0px solid white;
+  font-weight: 600;
+  border-radius: 30px;
+  /*display: block;*/
+  background-position: 4px 2px;
+  background-color: #d9d9d9;
+  margin-left: 15px;
+}
+
+.selectFilter{
+  padding:10px;
+}
+
+.divFilter{
+  float: right;
+}

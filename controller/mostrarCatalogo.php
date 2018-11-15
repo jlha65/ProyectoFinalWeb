@@ -9,8 +9,14 @@ include('../dataAccess/UserDAO.php');
 
     $petDAO = new PetDAO($DB_CON);
     $userDAO = new UserDAO($DB_CON);
-
-    $result = $petDAO->getPets();
+    
+    //if ($opcionFiltro==null || $opcionFiltro=='Todos' || $opcionFiltro==""){
+    //if (!isset($_SESSION['type']) || $_SESSION['type'] =='Todos' || $_SESSION['type'] ==''){
+        $result = $petDAO->getPets();
+    //} else {
+    //    $result = $petDAO->getPetsByType($_SESSION['type']);
+    //}
+    $message = 'El tipo actual es '.$_SESSION['type'];
     if($result==null) {
 
         $message = 'No contamos con animales en catalogo';
@@ -40,44 +46,44 @@ include('../dataAccess/UserDAO.php');
 
             //echo '<img src="../pictures/'.$img.'">';
             echo '
-            <div class="col-lg-4 col-sm-6 portfolio-item">
-              <div class="card h-100">
+            <div class="elementoDelCatalogo col-lg-4 col-sm-6 portfolio-item type'.$type.'">
+            <div class="card h-100">
                 <a id="'.$name.'" class="trigger_popup_fricc"><img class="card-img-top" src="'.$imgPath.'"></a>
                 <div class="card-body">
-                  <h4 class="card-title">
+                <h4 class="card-title">
                     <a class="titleCatalogo brushText">'.$name.'</a>
-                  </h4>
-                  <p class="card-text">'.$type.'</p>
+                </h4>
+                <p class="card-text">'.$type.'</p>
                 </div>
-              </div>
+            </div>
             </div>
 
             <div class="hover_bkgr_fricc clase_'.$name.' element_hidden">
-              <span class="helper"></span>
-              <div class="spacingBetweenLines">
-                  <div class="popupCloseButton">X</div>
-                  <img class="card-img-top" src="'.$imgPath.'"></a>
-                  <br>
-                  <br>
-                  <p class="brushText">'.$name.'</p>
-                  <p>'.$type.'</p>
-                  <p>'.$breed.'</p>
-                  <p>'.$yearofbirth.'</p>
-                  <p>'.$color.'</p>
-                  <p>'.$description.'</p>
-                  <p style="font-weight:bold;"> _______________________________________</p>
-                  <img class="imagenIconoCata" src="https://image.ibb.co/eYXkS0/user.png">
-                  <p>'.$userName.'</p>
-                  <p>@'.$user.'</p>
-                  <p>'.$userEmail.'</p>
-                  <p>'.$userTelephone.'</p>
-                  
-                  <p>'.$userCity.', '.$userCountry.'</p>
-              </div>
-          </div>
+            <span class="helper"></span>
+            <div class="spacingBetweenLines">
+                <div class="popupCloseButton">X</div>
+                <img class="card-img-top" src="'.$imgPath.'"></a>
+                <br>
+                <br>
+                <p class="brushText">'.$name.'</p>
+                <p>'.$type.'</p>
+                <p>'.$breed.'</p>
+                <p>'.$yearofbirth.'</p>
+                <p>'.$color.'</p>
+                <p>'.$description.'</p>
+                <p style="font-weight:bold;"> _______________________________________</p>
+                <img class="imagenIconoCata" src="https://image.ibb.co/eYXkS0/user.png">
+                <p>'.$userName.'</p>
+                <p>@'.$user.'</p>
+                <p>'.$userEmail.'</p>
+                <p>'.$userTelephone.'</p>
+                
+                <p>'.$userCity.', '.$userCountry.'</p>
+            </div>
+        </div>
             ';
         }
-    }   
+    }
 
 
 ?>

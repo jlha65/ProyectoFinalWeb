@@ -79,7 +79,25 @@
                 echo $ex->getMessage();
             }
         }
-
+        public function getPetsByType($type)
+        {
+          //$db = getDB();
+            try
+            {
+                $statement = $this->db->prepare('SELECT * FROM Pet where type= :type');
+                $statement->bindParam(':type', $type);
+                $statement->execute();
+                 //en caso de que haya mas
+                if($statement->rowCount() > 0 ){
+                    $result = $statement->fetchAll();
+                    return $result;
+                }else{ //en caso de que no haya ninguno
+                    return null;
+                }
+            }catch(PDOException $ex) {
+                echo $ex->getMessage();
+            }
+        }
         public function deletePet($petName)
         {
           //$db = getDB();

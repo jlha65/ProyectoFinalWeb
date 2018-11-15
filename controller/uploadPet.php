@@ -18,6 +18,7 @@ $petDAO = new PetDAO($DB_CON);
 
 $name = $_POST['nameP'];
 $type = $_POST['type'];
+
 $yearofbirth = $_POST['yearofbirth'];
 $description = $_POST['description'];
 $color = $_POST['color'];
