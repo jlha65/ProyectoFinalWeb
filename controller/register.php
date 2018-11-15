@@ -26,6 +26,9 @@ if($success) {
     echo('city: '.$city);
 */
     $message = 'Ya estás registrado, '.$name;
+    session_start();
+    session_unset();
+    $_SESSION['user']=$user;
     //echo "<script type='text/javascript'>alert('$message');</script>";
     echo "<script>
     alert('$message');

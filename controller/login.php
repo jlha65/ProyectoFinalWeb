@@ -25,6 +25,7 @@ if(!isset($UserToSearch)) {
     //echo('Hi '.$UserToSearch['username']);
     $user = new User($UserToSearch['name'], $UserToSearch['email'], $UserToSearch['username'], 
     $UserToSearch['password'], $UserToSearch['city'], $UserToSearch['country'], $UserToSearch['telephone']);
+    session_unset();
     $_SESSION['user']=$user;
     echo "<script>
     window.location.href='../html/home.php';

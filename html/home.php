@@ -1,17 +1,20 @@
 <?php
     include('../model/User.php');
+    //include('../controller/getUser.php');
+    
     session_start();
     if(!isset($_SESSION['user'])) {
         header("Location: login.html");
     }
     else {
-        $user=$_SESSION['user'];
-        $userName=$user->getName();
-        $userUsername=$user->getUsername();
-        $userEmail=$user->getEmail();
-        $userTelephone=$user->getTelephone();
-        $userCity=$user->getCity();
-        $userCountry=$user->getCountry();
+        $userSessionAct=$_SESSION['user'];
+        $userNameSessionAct=$userSessionAct->getName();
+        $userUsernameSessionAct=$userSessionAct->getUsername();
+        $userEmailSessionAct=$userSessionAct->getEmail();
+        $userTelephoneSessionAct=$userSessionAct->getTelephone();
+        $userCitySessionAct=$userSessionAct->getCity();
+        $userCountrySessionAct=$userSessionAct->getCountry();
+
     }
 
 ?>
@@ -234,18 +237,22 @@
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-4">
-        <h1><?php echo $userName?></h1>
-        <h4 id="usernameStyle">@<?php echo $userUsername?></h4>
+        <h1><?php echo $userNameSessionAct?></h1>
+        <h4 id="usernameStyle">@<?php echo $userUsernameSessionAct?></h4>
         <br>
         <img class="imagenIcono" src="https://image.ibb.co/cvn90A/67347.png">
-        <p> <?php echo $userCity?>, <?php echo $userCountry?></p>
+        <p> <?php echo $userCitySessionAct?>, <?php echo $userCountrySessionAct?></p>
         <img class="imagenIcono" src="https://image.ibb.co/nu57nq/telephone.png">
-        <p> <?php echo $userTelephone?></p>
+        <p> <?php echo $userTelephoneSessionAct?></p>
         <img class="imagenIcono" src="https://image.ibb.co/mna7nq/email.png">
-        <p> <?php echo $userEmail?></p>
+        <p> <?php echo $userEmailSessionAct?></p>
 
         <p>¡Esperamos que estes teniendo una estancia agradable en nuestro sitio!</p>
-        <a class="btn btn-primary btn-lg" href="#">Editar mi información</a>
+        <form action="../controller/logout.php" method="post">
+        <input type="hidden" id="usernameOfUser" name="usernameOfUser" value="<?php echo $userUsername?>">
+            <input class="btn btn-primary btn-lg" type="submit" value="Cerrar Sesión">
+        </form>
+
       </div>
       <!-- /.col-md-4 -->
     </div>

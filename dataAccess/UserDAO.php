@@ -23,6 +23,7 @@
                 $statement->execute();
                 return True;
             } catch(PDOException $ex) {
+                echo $ex;
                 return False;
             }
         }

@@ -10,7 +10,7 @@
 
     
     //$result = $petDAO->getPet($userUsername);
-    $result = $petDAO->getPetsByUsername($userUsername);
+    $result = $petDAO->getPetsByUsername($userUsernameSessionAct);
     if($result==null) {
         $message = 'No tienes ningun animal en adopcion';
         echo "<p>".$message."</p>";
