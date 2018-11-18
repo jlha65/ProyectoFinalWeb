@@ -1,0 +1,96 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Nov 15, 2018 at 11:21 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `AdoptMe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Pet`
+--
+
+CREATE TABLE `Pet` (
+  `type` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `yearofbirth` int(4) NOT NULL,
+  `color` varchar(20) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `breed` varchar(100) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `username` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Pet`
+--
+
+INSERT INTO `Pet` (`type`, `name`, `yearofbirth`, `color`, `description`, `breed`, `image`, `username`) VALUES
+('Perro', 'Roger', 2010, 'Negro y Café', 'Es muy amigable! Le gusta perseguir su cola', 'Rottweiler', 'adorable-animal-blur-406014.jpg', 'joseluisx'),
+('Iguana', 'Pancho', 2017, 'Verde', 'Una iguana de mascota es de las mejores compañias! No necesita de muchos cuidados', 'Iguana Verde', 'animal-chinese-water-dragon-exotic-321900.jpg', 'joseluisx'),
+('Perro', 'Bombón', 2012, 'Miel', 'Requiere de un jardín grande y una familia amorosa', 'Labrador', 'adorable-animal-breed-159541.jpg', 'joseluisx'),
+('Gato', 'Monchis', 2016, 'Gris', 'Monchis ama perseguir ratones, es un excelente cazador', 'Azul Ruso', 'animal-animal-photography-cat-104827.jpg', 'joseluisx'),
+('Perro', 'Zavala', 1994, 'Rojo', 'Es muy travieso. Le cuesta ladrar', 'Pug', 'adorable-animal-bull-160846.jpg', 'kathyap'),
+('Conejo', 'Lindura', 2017, 'Cafe claro', 'Le encantan las zanahorias', 'Conejo enano', 'bunny-cute-detail-53966.jpg', 'luisapineda'),
+('Pez', 'Pato', 2000, 'Naranja', 'Pez chico naranja', 'Payaso', 'animal-clown-fish-fish-128756.jpg', 'Lalonchera'),
+('Perro', 'Chispitas', 2005, 'Negro', 'Compañero más fiel no podrás encontrar', 'Husky Siberiano', 'adorable-animal-breed-434090.jpg', 'marianaacano'),
+('Cuyo', 'Risas', 2001, 'Café', 'La mejor mascota del mundo', 'Cuyo de la India', 'animal-grass-guinea-pig-47323.jpg', 'marianaacano'),
+('Perro', 'Muso', 2015, 'Negro', 'Hermoso y es una miniatura', 'Schnauzer', 'Miniature_Schnauzer_SERP.jpg', 'joseluisx'),
+('Otro', 'Tortuga` DROP TABLE User', 2018, 'Negro', 'Delete this', 'Delete this', 'turtle-animals-water-creature-loggerhead-sea-turtle-65885.jpeg', 'joseluisx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE `User` (
+  `username` varchar(15) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `telephone` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`username`, `name`, `email`, `password`, `city`, `country`, `telephone`) VALUES
+('carlosll', 'Carlos López', 'carlosll@gmail.com', 'contra', 'Los Mochis', 'Mexico', '6671384528'),
+('danielx', 'Daniel Zavala', 'daniel@gmail.com', 'pass', 'Altamira', 'Mexico', '83312464'),
+('joseluisx', 'Jose Luis', 'joseluis@gmail.com', 'contra', 'Sinaloa', 'Mexico', '833145605'),
+('kathyap', 'Kathya Olivas', 'kat@gmail.com', 'contra', 'Ciudad Juarez', 'Nuevo Leon', 'Kathya I Olivas'),
+('kbandala2', 'karla', 'k.rbandala@gmail.com', 'contra', 'CDMX', 'Mexico', '674829845'),
+('Lalonchera', 'Eduardo Ortega', 'e.oh@outlook.es', 'EOH12345', 'Ciudad Juarez', 'Mexico', '6567445740'),
+('luisapineda', 'Luisa Pineda', 'fer@gmail.com', 'contra', 'Monterrey', 'Mexico', '018338541389'),
+('marianaacano', 'Mariana Cano', 'mariana@gmail.com', 'hola', 'Casas Grandes', 'Mexico', '65612345'),
+('marianacastillo', 'Mariana Castillo', 'marianaa@gmail.com', 'pass', 'Casas Grandes', 'Mexico', '65612345'),
+('mariferx', 'Maria Fernanda Pitalua', 'marifer@hotmail.com', 'contra', 'Ciudad Madero', 'Mexico', '9891922'),
+('marimar', 'Marisela Martinez', 'marisela@hotmail.com', 'mariana', 'Torreon', 'Coahuila', '55555789'),
+('oscarherrera', 'oscar', 'oscarherrera@gmail.com', 'contra', 'Santa Maria del Oro', 'Mexico', '1234567'),
+('rogerrr', 'Roger Gil', 'rogergil@outlook.com', 'rogerrr', 'Veracruz', 'Veracruz', '99988877');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
